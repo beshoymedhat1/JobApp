@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap');
+
+:root {
+    --ink: #172033;
+    --muted: #667085;
+    --primary: #5b4cf0;
+    --primary-dark: #4438c9;
+    --surface: #ffffff;
+    --line: #e6e8ef;
+    --soft-purple: #f1efff;
+}
+
+* { box-sizing: border-box; }
+
+body {
+    min-height: 100vh;
+    margin: 0;
+    background: #f7f8fc;
+    color: var(--ink);
+    font-family: 'DM Sans', sans-serif;
+}
+
+.container { max-width: 1140px; }
+
+.navbar {
+    background: rgba(255, 255, 255, .92) !important;
+    border-bottom: 1px solid var(--line);
+    backdrop-filter: blur(14px);
+}
+
+.navbar .container { padding: .9rem 1.5rem; }
+.navbar-brand {
+    color: var(--ink) !important;
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.38rem !important;
+    font-weight: 800 !important;
+    letter-spacing: -.04em;
+}
+
+.brand-mark {
+    display: inline-grid;
+    width: 2rem;
+    height: 2rem;
+    margin-right: .55rem;
+    place-items: center;
+    border-radius: .65rem;
+    background: linear-gradient(135deg, #796bff, #5143e1);
+    color: #fff;
+    font-size: 1rem;
+    letter-spacing: 0;
+}
+
+.navbar-nav { gap: .3rem; }
+.navbar-nav .nav-link {
+    padding: .5rem .8rem !important;
+    color: #5d6472 !important;
+    font-size: .94rem;
+    font-weight: 600;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active { color: var(--primary) !important; }
+
+.page-shell { padding: clamp(2.5rem, 5vw, 4.75rem) 0; }
+.page-heading { max-width: 680px; margin: 0 auto 2.4rem; }
+.page-heading h1 {
+    margin: .45rem 0 .75rem;
+    font-family: 'Outfit', sans-serif;
+    font-size: clamp(2.15rem, 5vw, 3.4rem);
+    font-weight: 800;
+    letter-spacing: -.05em;
+}
+
+.page-heading p { margin: 0; color: var(--muted); font-size: 1.05rem; line-height: 1.65; }
+.kicker {
+    color: var(--primary);
+    font-size: .78rem;
+    font-weight: 800;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+}
+
+.btn-job {
+    padding: .73rem 1.05rem;
+    border: 0;
+    border-radius: .65rem;
+    background: var(--primary);
+    color: #fff;
+    font-size: .93rem;
+    font-weight: 700;
+    box-shadow: 0 8px 18px rgba(91, 76, 240, .22);
+}
+
+.btn-job:hover { background: var(--primary-dark); color: #fff; }
+
+@media (max-width: 991.98px) {
+    .navbar-nav { padding-top: .75rem; }
+}

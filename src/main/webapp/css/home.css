@@ -1,0 +1,20 @@
+.hero { position: relative; overflow: hidden; padding: clamp(3.5rem, 8vw, 6.5rem) 0 4rem; }
+.hero::before, .hero::after { position: absolute; z-index: -1; width: 28rem; height: 28rem; border-radius: 50%; content: ''; filter: blur(5px); }
+.hero::before { top: -15rem; left: -12rem; background: #e5e1ff; }
+.hero::after { right: -14rem; bottom: -20rem; background: #d9f3ff; }
+.eyebrow { display: inline-flex; align-items: center; gap: .45rem; margin-bottom: 1.25rem; padding: .42rem .78rem; border: 1px solid #dedaff; border-radius: 99px; background: #f1efff; color: #5547d8; font-size: .78rem; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; }
+.eyebrow::before { width: .45rem; height: .45rem; border-radius: 50%; background: #6d5df6; content: ''; }
+.hero h1 { max-width: 650px; margin: 0; font-family: 'Outfit', sans-serif; font-size: clamp(2.75rem, 6vw, 4.8rem); font-weight: 800; letter-spacing: -.065em; line-height: .98; }
+.hero h1 span { color: var(--primary); }
+.hero-copy { max-width: 550px; margin: 1.5rem 0 2rem; color: var(--muted); font-size: 1.1rem; line-height: 1.7; }
+.action-card { height: 100%; padding: 1.8rem; border: 1px solid var(--line); border-radius: 1.25rem; background: var(--surface); box-shadow: 0 16px 38px rgba(31, 41, 55, .06); transition: transform .2s ease, box-shadow .2s ease; }
+.action-card:hover { transform: translateY(-5px); box-shadow: 0 22px 45px rgba(53, 45, 122, .12); }
+.action-icon { display: grid; width: 3.2rem; height: 3.2rem; margin-bottom: 1.3rem; place-items: center; border-radius: .9rem; background: #eeecff; color: var(--primary); font-size: 1.35rem; }
+.action-card.secondary .action-icon { background: #e3f6ff; color: #1380b9; }
+.action-card h2 { margin: 0 0 .65rem; font-family: 'Outfit', sans-serif; font-size: 1.45rem; font-weight: 700; }
+.action-card p { min-height: 3rem; margin-bottom: 1.45rem; color: var(--muted); line-height: 1.55; }
+.btn-job-light { background: #eef8ff; color: #0874ac; box-shadow: none; }
+.btn-job-light:hover { background: #dff2ff; color: #066391; }
+.stats { margin-top: 4.5rem; padding-top: 2rem; border-top: 1px solid var(--line); }
+.stat-number { font-family: 'Outfit', sans-serif; font-size: 1.5rem; font-weight: 800; }
+.stat-label { color: var(--muted); font-size: .88rem; }

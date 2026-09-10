@@ -1,0 +1,10 @@
+.form-card { padding: clamp(1.4rem, 4vw, 2.25rem); border: 1px solid var(--line); border-radius: 1.2rem; background: var(--surface); box-shadow: 0 16px 40px rgba(31, 41, 55, .07); }
+.form-card h2 { margin: 0; font-family: 'Outfit', sans-serif; font-size: 1.55rem; font-weight: 750; }
+.form-intro { margin: .55rem 0 1.8rem; color: var(--muted); line-height: 1.6; }
+.form-label { margin-bottom: .45rem; color: #364054; font-size: .91rem; font-weight: 700; }
+.form-control, .form-select { padding: .72rem .82rem; border: 1px solid #dce0e9; border-radius: .65rem; color: var(--ink); }
+.form-control:focus, .form-select:focus { border-color: #9a90f8; box-shadow: 0 0 0 .22rem rgba(91, 76, 240, .13); }
+.form-select[multiple] { min-height: 12rem; }
+.form-help { margin-top: .55rem; color: var(--muted); font-size: .8rem; }
+.btn-submit { width: 100%; margin-top: .5rem; padding: .82rem 1rem; border: 0; border-radius: .65rem; background: var(--primary); color: #fff; font-weight: 800; box-shadow: 0 8px 18px rgba(91, 76, 240, .22); }
+.btn-submit:hover { background: var(--primary-dark); color: #fff; }

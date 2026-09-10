@@ -1,0 +1,12 @@
+.jobs-toolbar { display: flex; align-items: end; justify-content: space-between; gap: 1.5rem; margin-bottom: 2.5rem; }
+.jobs-toolbar .page-heading { margin: 0; }
+.job-count { flex: 0 0 auto; padding: .55rem .85rem; border: 1px solid #dedaff; border-radius: 999px; background: var(--soft-purple); color: #5547d8; font-size: .88rem; font-weight: 700; }
+.job-card { display: flex; height: 100%; flex-direction: column; padding: 1.55rem; border: 1px solid var(--line); border-radius: 1.15rem; background: var(--surface); box-shadow: 0 12px 30px rgba(31, 41, 55, .05); transition: transform .2s ease, box-shadow .2s ease; }
+.job-card:hover { transform: translateY(-5px); box-shadow: 0 20px 38px rgba(53, 45, 122, .12); }
+.job-card-top { display: flex; align-items: start; justify-content: space-between; gap: 1rem; }
+.job-card h2 { margin: 0; font-family: 'Outfit', sans-serif; font-size: 1.35rem; font-weight: 700; letter-spacing: -.025em; }
+.experience-badge { flex: 0 0 auto; padding: .36rem .55rem; border-radius: .5rem; background: #e9f8ff; color: #0874ac; font-size: .72rem; font-weight: 800; white-space: nowrap; }
+.job-description { min-height: 4.7rem; margin: 1rem 0 1.4rem; color: var(--muted); line-height: 1.6; }
+.tech-list { display: flex; flex-wrap: wrap; gap: .45rem; margin: auto 0 0; padding: 1rem 0 0; border-top: 1px solid var(--line); list-style: none; }
+.tech-list li { padding: .33rem .55rem; border-radius: .45rem; background: #f4f5f9; color: #495165; font-size: .78rem; font-weight: 700; }
+@media (max-width: 575.98px) { .jobs-toolbar { align-items: start; flex-direction: column; } }

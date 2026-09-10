@@ -1,0 +1,5 @@
+.success-card { max-width: 620px; margin: 3.5rem auto; padding: clamp(2rem, 6vw, 3.5rem); border: 1px solid #dce9e1; border-radius: 1.35rem; background: var(--surface); box-shadow: 0 18px 45px rgba(31, 41, 55, .08); text-align: center; }
+.success-icon { display: grid; width: 4.25rem; height: 4.25rem; margin: 0 auto 1.35rem; place-items: center; border-radius: 50%; background: #dcf8e7; color: #15803d; font-size: 2rem; font-weight: 800; }
+.success-card h1 { margin: 0 0 .8rem; font-family: 'Outfit', sans-serif; font-size: clamp(2rem, 5vw, 2.8rem); font-weight: 800; letter-spacing: -.05em; }
+.success-card p { max-width: 460px; margin: 0 auto 1.7rem; color: var(--muted); font-size: 1.02rem; line-height: 1.65; }
+.success-card strong { color: var(--ink); }
