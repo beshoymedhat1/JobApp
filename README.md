@@ -2,8 +2,6 @@
 
 A simple full-stack job-posting web application where users can publish job opportunities and browse all available roles.
 
-Built to practice the Spring MVC flow from form submission to PostgreSQL storage and JSP rendering.
-
 ## Features
 
 - View all available job posts in a responsive card layout.
