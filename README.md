@@ -71,20 +71,6 @@ Add this environment variable:
 DB_PASSWORD=your_postgresql_password
 ```
 
-The default database URL and user are:
-
-```properties
-spring.datasource.url=jdbc:postgresql://localhost:5432/jobapp
-spring.datasource.username=postgres
-```
-
-If your database URL or username is different, add these optional environment variables too:
-
-```text
-DB_URL=jdbc:postgresql://localhost:5432/jobapp
-DB_USERNAME=postgres
-```
-
 ### 4. Start the application
 
 Run `JobAppApplication` from IntelliJ IDEA, then open:
@@ -103,21 +89,3 @@ Use **View All Jobs** to browse saved posts or **Post a Job** to create one.
 | View All Jobs | Shows all jobs stored in PostgreSQL. |
 | Post a Job | Form for publishing a new job post. |
 | Success | Confirms that the submitted job was saved. |
-
-## Notes
-
-- `post_id` is currently entered manually and must be unique.
-- The tech stack is stored as a comma-separated value and converted back to a list when jobs are displayed.
-- Do not commit database passwords, `.idea`, or `target`; these are excluded by `.gitignore`.
-
-## Future Improvements
-
-- Generate job IDs automatically.
-- Add validation and friendly error messages for duplicate job IDs.
-- Add search, filtering, update, and delete functionality.
-- Add automated tests.
-- Deploy the application so it can be viewed online.
-
-## Acknowledgements
-
-The application logic, database integration, and Spring MVC structure were developed as a learning project. The HTML/CSS presentation was refined with assistance from ChatGPT.
