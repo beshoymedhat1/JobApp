@@ -1,91 +1,81 @@
 # Job App
 
-A simple full-stack job-posting web application where users can publish job opportunities and browse all available roles.
+A full-stack job posting app with a Spring Boot REST API and a separate frontend.
 
 ## Features
 
-- View all available job posts in a responsive card layout.
-- Post a new job with a role, description, required experience, and multiple technical skills.
-- Persist job posts in a PostgreSQL database.
-- Load starter data automatically when the application starts.
-- Display a confirmation page after successfully publishing a job post.
-- Keep the code organized using Controller, Service, Repository, and Model layers.
+- Browse all job posts and search by job title or description.
+- Add, edit, and delete job posts.
+- Store each post's title, description, experience requirement, and technology stack in PostgreSQL.
+- Run the frontend and backend as separate applications.
 
-## Tech Stack
+## Project layout
 
-- Java
-- Spring Boot and Spring MVC
-- JSP and JSTL
-- JdbcTemplate
+```text
+.
+├── frontend/                 # Standalone website, served on port 3000
+├── src/main/java/            # Spring Boot REST API
+├── src/main/resources/       # Backend configuration
+├── pom.xml
+└── README.md
+```
+
+## Requirements
+
+- JDK 26 (the version configured in `pom.xml`)
 - PostgreSQL
-- HTML, CSS, and Bootstrap 5
-- Maven
+- Node.js 18 or newer
 
-## Project Structure
+## Run locally
 
-```text
-src/main
-├── java/com/learn/JobApp
-│   ├── controller/     # Handles HTTP requests
-│   ├── service/        # Contains application logic
-│   ├── repository/     # Reads and writes job data with JdbcTemplate
-│   └── model/          # JobPost model
-├── resources
-│   ├── application.properties
-│   ├── schema.sql      # Creates the job_post table
-│   └── data.sql        # Adds starter job posts
-└── webapp
-    ├── css/            # Shared and page-specific styles
-    └── views/          # JSP pages
+### 1. Configure PostgreSQL
+
+Create a PostgreSQL database, for example `jobapp`, and set the connection environment variables in PowerShell before starting the backend:
+
+```powershell
+$env:DB_URL = "jdbc:postgresql://localhost:5432/jobapp"
+$env:DB_USERNAME = "postgres"
+$env:DB_PASSWORD = "your-postgresql-password"
 ```
 
-## Run Locally
+The current defaults are in `src/main/resources/application.properties`. Do not put a real database password in a committed file.
 
-### 1. Prerequisites
+### 2. Start the backend
 
-- JDK version configured in `pom.xml`
-- PostgreSQL
-- IntelliJ IDEA or Maven
+From the repository root:
 
-### 2. Create the database
-
-Create a PostgreSQL database called `jobapp`:
-
-```sql
-CREATE DATABASE jobapp;
+```powershell
+.\mvnw.cmd spring-boot:run
 ```
 
-The application runs `schema.sql` and `data.sql` on startup. The first file creates the table, while the second provides four sample job posts.
+The API listens on `http://localhost:8080` by default. Keep this terminal open.
 
-### 3. Configure the database connection
+### 3. Start the frontend
 
-The project intentionally does **not** store a database password in GitHub. In IntelliJ IDEA, open:
+Open a second PowerShell terminal:
 
-```text
-Run → Edit Configurations → JobApp
+```powershell
+cd frontend
+npm.cmd start
 ```
 
-Add this environment variable:
+Then visit `http://localhost:3000`. The frontend uses Node's built-in HTTP server and does not need `npm install`.
 
-```text
-DB_PASSWORD=your_postgresql_password
-```
+The frontend API address is configured in `frontend/js/config.js`. CORS on the backend currently allows `http://localhost:3000`.
 
-### 4. Start the application
+## API endpoints
 
-Run `JobAppApplication` from IntelliJ IDEA, then open:
+| Method | Endpoint | Purpose |
+| --- | --- | --- |
+| `GET` | `/jobPosts` | List all job posts |
+| `GET` | `/jobPosts/keyword/{keyword}` | Search by title or description |
+| `GET` | `/jobPost/{postId}` | Get one job post |
+| `POST` | `/jobPost` | Create a job post |
+| `PUT` | `/jobPost` | Update a job post |
+| `DELETE` | `/jobPost/{postId}` | Delete a job post |
 
-```text
-http://localhost:8080/
-```
+## Configuration notes
 
-Use **View All Jobs** to browse saved posts or **Post a Job** to create one.
-
-## Pages
-
-| Page | Purpose |
-| --- | --- |
-| Home | Entry page with navigation to the main actions. |
-| View All Jobs | Shows all jobs stored in PostgreSQL. |
-| Post a Job | Form for publishing a new job post. |
-| Success | Confirms that the submitted job was saved. |
+- The backend connects to PostgreSQL using `DB_URL`, `DB_USERNAME`, and `DB_PASSWORD`.
+- Hibernate schema updates are enabled in `application.properties`.
+- If the frontend or API is hosted on another address, update the API base URL and the backend CORS origin to match.

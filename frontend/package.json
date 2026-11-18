@@ -1,0 +1,7 @@
+{
+  "name": "jobapp-frontend",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Standalone frontend for the Spring Boot Job App API",
+  "scripts": { "start": "node server.cjs" }
+}

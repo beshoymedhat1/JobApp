@@ -1,10 +1,10 @@
-package com.learn.JobApp;
+package com.learn.SBR;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class JobAppApplicationTests {
+class SpringBootRestApplicationTests {
 
 	@Test
 	void contextLoads() {
